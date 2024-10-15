@@ -6,9 +6,9 @@ public class Homework1 {
     private JPanel panel;
     private JButton button;
     private JLabel label;
-    private JButton button2;
-    private JLabel label2;
+
     private JTextField textField;
+    private JTextField textField2;
 
     public static void main(String[] args) {
         Homework1 p = new Homework1();
@@ -16,23 +16,22 @@ public class Homework1 {
 
     public Homework1(){
         frame = new JFrame("Example with grid layout");
-        panel = new JPanel(new GridLayout(2,2));
+        panel = new JPanel(new BorderLayout(2,2));
         button = new JButton("button 1");
         label = new JLabel("Label1!");
-        button2 = new JButton("button 2");
-        label2 = new JLabel("label2!");
+        textField = new JTextField("this is a text field!");
+        textField2 = new JTextField("this is a text area yay!");
 
-         // order matters in grid and flow layouts
-        panel.add(label);
-        panel.add(button);
-        panel.add(button2);
-        panel.add(label2);
+        panel.add(label, BorderLayout.WEST);
+        panel.add(button, BorderLayout.NORTH);
+        panel.add(textField, BorderLayout.SOUTH);
+        panel.add(textField2, BorderLayout.CENTER);
 
         frame.add(panel);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit the program when the frame is closed
-        frame.setSize(300,300); // setting dimensions of frame
-        frame.setVisible(true); // make frame really happen
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300,300);
+        frame.setVisible(true);
     }
 
 }
